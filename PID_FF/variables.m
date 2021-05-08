@@ -6,7 +6,7 @@ close all
 %%%%%%%%%%%%
 MVO = 50; % [%]
 DVO = 50; % [%]
-PVO = 67.5; % [°C]
+PVO = 57.04; % [°C]
 
 %MV->PV
 Kp = 0.39;
@@ -27,3 +27,14 @@ offset_WP = PVO - Kp*MVO;
 %%%%%%%%%%%%%%%%%%
 
 Ts = 1;
+
+delay_FF = round(max(0,thetad-theta)/Ts);
+
+
+%%%%%%%%%%%%%%%%
+% IMC Parameters
+%%%%%%%%%%%%%%%%
+
+Kc = 2.287;
+taui = 155.32;
+taud = 16.38;
